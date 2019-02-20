@@ -48,10 +48,7 @@ router.get('/', (req, res, next) => {
         let excessRows = 0;
 
         if(filteredResults.length > 100){
-            console.dir(filteredResults.length);
-            filteredResults = filteredResults.slice(0, 99);
-            console.dir(results.length);
-            console.dir(filteredResults.length);
+            filteredResults = filteredResults.slice(0, 100);
             excessRows = results.length - filteredResults.length;
         }
 
