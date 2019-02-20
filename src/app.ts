@@ -21,7 +21,6 @@ app.use(cors())
 
 // Before handling any queries, make sure the database is up.
 app.use((req, res, next) => {
-    console.dir('yo');
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     if (isDBActive()) {
@@ -32,5 +31,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/api', apiRouter);
+
+
 
 module.exports = app;
